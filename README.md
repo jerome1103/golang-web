@@ -159,20 +159,19 @@ http://localhost:8000/api/rank
 ```javascript
 http://localhost:8000/api/rank
 ```
+* 代入的參數
+
+```javascript
+name:Prada
+score:99
+```
+
 * 回傳Json內容
 ```javascript
 {
     "message": [
         {
-            "Score": 40,
-            "Member": "LV"
-        },
-        {
-            "Score": 50,
-            "Member": "Dior"
-        },
-        {
-            "Score": 60,
+            "Score": 99,
             "Member": "Prada"
         }
     ],
