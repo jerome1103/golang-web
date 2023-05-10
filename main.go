@@ -20,8 +20,13 @@ func init() {
 }
 
 func main() {
-	initObjs.Server.POST("/buy", itemDAO.BuyItem)
-	initObjs.Server.GET("/item", itemDAO.FindItem)
-	initObjs.Server.POST("/item", itemDAO.AddItem)
+	router := initObjs.Server.Group(initObjs.Cfg.Group)
+	router.POST("buy", itemDAO.BuyItem)
+	router.GET("item", itemDAO.FindItem)
+	router.GET("item/:id", itemDAO.FindItemByID)
+	router.POST("item", itemDAO.AddItem)
+	router.PUT("item/:id", itemDAO.UpdateItem)
+	router.DELETE("item/:id", itemDAO.DeleteItem)
+
 	initObjs.Server.Run(":" + initObjs.Cfg.Port)
 }

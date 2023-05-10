@@ -6,9 +6,10 @@ import (
 
 // Config結構
 type Config struct {
+	Group    string `mapstructure:"Group"`
+	Port     string `mapstructure:"PORT"`
 	DBUri    string `mapstructure:"MONGODB_LOCAL_URI"`
 	RedisUri string `mapstructure:"REDIS_URL"`
-	Port     string `mapstructure:"PORT"`
 }
 
 func LoadConfig(path string) (config *Config, err error) {
